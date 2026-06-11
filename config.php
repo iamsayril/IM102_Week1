@@ -2,7 +2,7 @@
 $host = "localhost";
 $user = "root";
 $pass = "";
-$db = "im102";
+$db = "im102_quinio";
 
 $conn = new mysqli($host, $user, $pass, $db);
 

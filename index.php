@@ -96,6 +96,7 @@ $result = $conn->query($sql);
                 <th>Email</th>
                 <th>Phone Number</th>
                 <th>Address</th>
+                <th>Actions</th>
             </tr>
 
             <?php while ($row = $result->fetch_assoc()): ?>
@@ -108,6 +109,14 @@ $result = $conn->query($sql);
                     <td><?= $row['email'] ?></td>
                     <td><?= $row['phone'] ?></td>
                     <td><?= $row['address'] ?></td>
+
+                    <td>
+    <a href="edit.php?id=<?= $row['id'] ?>" 
+       style="color: #2196F3; text-decoration: none; margin-right: 10px;">Edit</a>
+    <a href="delete.php?id=<?= $row['id'] ?>" 
+       style="color: #f44336; text-decoration: none;"
+       onclick="return confirm('Delete <?= htmlspecialchars(addslashes($row['name'])) ?>?')">Delete</a>
+                    </td>
                 </tr>
             <?php endwhile; ?>
         </table>
